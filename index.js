@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   return res.send('Hello');
 });
 
+app.get('/home',(req,res) => {
+  return res.send('You`'`re at home cry now');
+});
+
 app.listen(PORT, (err) => {
   console.log(err || `Server listening at ${PORT}`);
 });
