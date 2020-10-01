@@ -1,8 +1,8 @@
-import express from 'express';
+var express=require('express');
+var body=require('body-parser');
+var path=require('path');
 let app = express();
 const PORT = process.env.PORT|| 3000;
-
-import body from 'body-parser';
 
 app.use(body.json());
 
@@ -11,7 +11,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home',(req,res) => {
-  return res.send('You`'`re at home cry now');
+  res.statusCode=200;
+  res.setHeader('Content-Type','text/html');
+  res.sendFile(path.join(__dirname,'home.html'));
 });
 
 app.listen(PORT, (err) => {
