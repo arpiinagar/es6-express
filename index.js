@@ -1,6 +1,6 @@
 import express from 'express';
 let app = express();
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT || 3000;
 
 import body from 'body-parser';
 
@@ -10,8 +10,12 @@ app.get('/', (req, res) => {
   return res.send('Hello');
 });
 
-app.get('/home',(req,res) => {
-  return res.send('You`'`re at home cry now');
+app.get('/greet/:greeting/:to', (req, res) => {
+  return res.send(`${req.params.greeting} ${req.params.to}`);
+});
+
+app.get('/home', (req, res) => {
+  return res.send(`You're at home cry now`);
 });
 
 app.listen(PORT, (err) => {
