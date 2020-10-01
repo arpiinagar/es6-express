@@ -22,6 +22,10 @@ app.get('/greet/:greeting/:to', (req, res) => {
 app.get('/home', (req, res) => {
   return res.send(`You're at home cry now`);
 });
+  
+app.get('/Evra', async (req,res)=>{
+  return res.send('I love this game');
+})
 
 app.listen(PORT, (err) => {
   console.log(err || `Server listening at ${PORT}`);
