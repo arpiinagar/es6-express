@@ -1,5 +1,6 @@
 import express from 'express';
 let app = express();
+const PORT = 3000;
 
 import body from 'body-parser';
 
@@ -9,6 +10,6 @@ app.get('/', (req, res) => {
   return res.send('Hello');
 });
 
-app.listen(3000, () => {
-  console.log('Server start at 3000');
+app.listen(PORT, (err) => {
+  console.log(err || `Server listening at ${PORT}`);
 });
