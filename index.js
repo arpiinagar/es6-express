@@ -1,5 +1,6 @@
 import express from 'express';
 let app = express();
+const PORT = 3000;
 
 import body from 'body-parser';
 
@@ -10,9 +11,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/home',(req,res) => {
-  return res.send('Youre at home cry now');
+  return res.send('You`'`re at home cry now');
 });
 
-app.listen(3000, () => {
-  console.log('Server start at 3000');
+app.listen(PORT, (err) => {
+  console.log(err || `Server listening at ${PORT}`);
 });
