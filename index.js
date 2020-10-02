@@ -27,6 +27,10 @@ app.get('/Evra', async (req,res)=>{
   return res.send('I love this game');
 })
 
+app.get('/About', async (req,res)=>{
+  return res.send('Read what this game is all about');
+})
+
 app.listen(PORT, (err) => {
   console.log(err || `Server listening at ${PORT}`);
 });
